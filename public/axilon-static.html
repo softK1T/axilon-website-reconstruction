@@ -4,171 +4,167 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Axilon Praca – Axilon Praca</title>
-    <!-- Basic WP Styles restoration -->
-    <link rel='stylesheet' id='font-awesome-css'  href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' type='text/css' media='all' />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900|Poppins:300,400,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        /* Essential Critical CSS extracted from visual analysis to match the screenshot/file */
-        body { margin: 0; font-family: 'Montserrat', sans-serif; color: #111; font-size: 14px; line-height: 1.6; background: #fff; }
+        /* Base Reset & Typography from HTML style */
+        body { font-family: 'Poppins', sans-serif; color: #555; font-size: 14px; line-height: 1.7; margin: 0; background: #fff; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; color: #111; font-weight: 700; text-transform: uppercase; margin: 0 0 20px; }
         
-        /* Top Bar */
-        .top-bar { background-color: #111; color: #aaa; padding: 12px 0; font-size: 12px; border-bottom: 1px solid #222; }
+        /* Layout Helpers */
         .container { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
-        .top-bar-flex { display: flex; justify-content: space-between; align-items: center; }
-        .top-info { display: flex; gap: 20px; }
-        .top-info i { color: #ffb600; margin-right: 8px; }
-        .top-info a { color: #aaa; text-decoration: none; transition: 0.3s; }
-        .top-info a:hover { color: #ffb600; }
-        
-        /* Header */
-        header { background: #fff; box-shadow: 0 2px 20px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; height: 90px; display: flex; align-items: center; }
-        .header-flex { display: flex; justify-content: space-between; align-items: center; width: 100%; }
-        .logo img { height: 46px; width: auto; }
-        
-        .main-menu { display: flex; gap: 30px; align-items: center; }
-        .main-menu a { text-decoration: none; color: #111; font-weight: 700; text-transform: uppercase; font-size: 12px; letter-spacing: 1px; transition: 0.3s; }
-        .main-menu a:hover { color: #ffb600; }
-        .btn-contact { background: #ffb600; color: #111 !important; padding: 12px 25px; border-radius: 0; }
-        .btn-contact:hover { background: #111 !important; color: #fff !important; }
+        .vc_row { display: flex; flex-wrap: wrap; margin: 0 -15px; }
+        .wpb_column { padding: 0 15px; box-sizing: border-box; }
+        .vc_col-sm-3 { width: 25%; }
+        .vc_col-sm-4 { width: 33.333%; }
+        .vc_col-sm-6 { width: 50%; }
+        .vc_col-sm-8 { width: 66.666%; }
+        .vc_col-sm-9 { width: 75%; }
+        .vc_col-sm-12 { width: 100%; }
 
-        /* Slider / Hero */
-        .hero { position: relative; height: 700px; background: url('https://axilon-praca.pl/wp-content/uploads/2017/08/bg-slider-2.jpg') center/cover no-repeat; display: flex; align-items: center; }
-        .hero-overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 100%); }
-        .hero-content { position: relative; z-index: 2; color: #fff; padding-top: 50px; }
-        .hero-year { color: #666; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 20px; font-weight: 700; border-left: 3px solid #ffb600; padding-left: 15px; }
-        .hero h1 { font-size: 80px; font-weight: 900; line-height: 0.9; text-transform: uppercase; margin: 0 0 30px 0; }
-        .hero h1 span { color: #ffb600; }
-        .hero p { color: #999; font-size: 16px; max-width: 500px; margin-bottom: 40px; font-weight: 300; }
-        .hero-btns { display: flex; gap: 15px; }
-        .btn { padding: 18px 40px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 11px; border: none; cursor: pointer; transition: 0.3s; text-decoration: none; display: inline-block; }
-        .btn-primary { background: #ffb600; color: #111; }
-        .btn-primary:hover { background: #fff; color: #111; }
-        .btn-outline { border: 1px solid rgba(255,255,255,0.3); color: #fff; }
+        /* HEADER (From HTML structure) */
+        .top-bar { background: #111; color: #fff; padding: 10px 0; font-size: 12px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .top-bar i { color: #ffb600; margin-right: 8px; }
+        .top-bar ul { list-style: none; padding: 0; margin: 0; display: flex; gap: 20px; }
+        
+        header.main-header { background: #fff; box-shadow: 0 5px 30px rgba(0,0,0,0.05); height: 90px; display: flex; align-items: center; position: sticky; top: 0; z-index: 999; }
+        .logo-wrapper img { max-height: 45px; }
+        .main-menu { display: flex; gap: 30px; align-items: center; margin-left: auto; }
+        .main-menu a { text-decoration: none; color: #111; font-weight: 700; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; }
+        .main-menu a:hover { color: #ffb600; }
+        
+        /* HERO (Reconstructed from Screenshot + HTML content) */
+        .hero-section { background: #111 url('https://axilon-praca.pl/wp-content/uploads/2017/08/bg-slider-2.jpg') center/cover; height: 800px; display: flex; align-items: center; position: relative; }
+        .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.5)); }
+        .hero-content { position: relative; z-index: 2; color: #fff; padding-top: 60px; }
+        
+        .hero-title-lg { font-size: 80px; line-height: 0.9; font-weight: 900; color: #fff; margin-bottom: 30px; }
+        .hero-title-lg span { color: #ffb600; }
+        .hero-subtitle { border-left: 3px solid #ffb600; padding-left: 20px; color: #aaa; font-size: 16px; margin-bottom: 40px; max-width: 500px; }
+        
+        .btn { display: inline-block; padding: 15px 40px; background: #ffb600; color: #111; font-weight: 700; text-transform: uppercase; font-size: 12px; letter-spacing: 1px; text-decoration: none; border: 2px solid #ffb600; transition: 0.3s; }
+        .btn:hover { background: #fff; color: #111; border-color: #fff; }
+        .btn-outline { background: transparent; color: #fff; border-color: rgba(255,255,255,0.3); margin-left: 20px; }
         .btn-outline:hover { background: #fff; color: #111; border-color: #fff; }
 
-        /* Job Cards */
-        .section-title { text-align: left; margin-bottom: 60px; }
-        .sub-title { color: #999; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; font-weight: 700; display: block; margin-bottom: 10px; }
-        .main-title { font-size: 40px; font-weight: 800; text-transform: uppercase; margin: 0; }
-        .main-title span { color: #ddd; }
-        
-        .jobs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 100px; }
-        .job-card { background: #fff; border: 1px solid #eee; transition: 0.3s; }
-        .job-card:hover { border-color: #ffb600; box-shadow: 0 10px 40px rgba(0,0,0,0.05); }
-        .job-img { height: 240px; overflow: hidden; position: relative; }
-        .job-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
-        .job-card:hover .job-img img { transform: scale(1.05); }
-        .job-loc { position: absolute; bottom: 0; left: 0; background: #111; color: #fff; padding: 8px 15px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
-        
-        .job-body { padding: 30px; }
-        .job-title { font-size: 18px; font-weight: 800; text-transform: uppercase; margin: 0 0 20px 0; }
-        .job-list { list-style: none; padding: 0; margin: 0 0 30px 0; }
-        .job-list li { font-size: 12px; color: #666; margin-bottom: 10px; font-weight: 600; display: flex; align-items: center; }
-        .job-list li::before { content: ''; width: 6px; height: 6px; background: #ffb600; border-radius: 50%; margin-right: 12px; }
-        
-        .job-footer { display: flex; justify-content: space-between; align-items: flex-end; border-top: 1px solid #eee; padding-top: 20px; }
-        .salary-label { font-size: 9px; color: #999; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; display: block; margin-bottom: 5px; }
-        .salary-val { font-size: 16px; font-weight: 800; color: #111; }
-        .btn-apply { background: #111; color: #fff; font-size: 10px; font-weight: 700; text-transform: uppercase; padding: 10px 20px; text-decoration: none; letter-spacing: 1px; transition: 0.3s; }
-        .btn-apply:hover { background: #ffb600; color: #111; }
+        /* JOB GRID (HTML Structure Replication) */
+        .section-padding { padding: 100px 0; }
+        .heading-block { margin-bottom: 60px; }
+        .heading-block h2 { font-size: 40px; margin-bottom: 10px; }
+        .heading-block span { color: #ffb600; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; }
 
-        /* Stats */
-        .stats { background: #f9f9f9; py: 80px; border-top: 1px solid #eee; }
-        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
-        .stat-item { text-align: center; padding: 60px 20px; border-right: 1px solid #eee; }
-        .stat-item:last-child { border: none; }
-        .stat-num { font-size: 50px; font-weight: 900; color: #111; line-height: 1; margin: 20px 0; }
-        .stat-desc { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #999; line-height: 1.6; }
-        .stat-icon svg { width: 40px; height: 40px; fill: #ffb600; }
-
-        /* Footer */
-        footer { background: #111; color: #fff; padding: 80px 0 40px 0; }
-        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 40px; margin-bottom: 60px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 60px; }
-        .f-title { color: #fff; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 30px; }
-        .f-text { color: #777; font-size: 12px; line-height: 2; margin-bottom: 30px; }
-        .f-list { list-style: none; padding: 0; }
-        .f-list li { margin-bottom: 15px; font-size: 12px; color: #777; display: flex; gap: 10px; }
-        .f-list i { color: #ffb600; }
-        .f-links a { color: #777; text-decoration: none; font-size: 11px; font-weight: 700; text-transform: uppercase; display: block; margin-bottom: 15px; transition: 0.3s; }
-        .f-links a:hover { color: #ffb600; }
+        .job-item { background: #fff; border: 1px solid #eee; transition: 0.3s; height: 100%; display: flex; flex-direction: column; }
+        .job-item:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); border-color: #ffb600; }
+        .job-thumb { height: 250px; overflow: hidden; position: relative; }
+        .job-thumb img { width: 100%; height: 100%; object-fit: cover; }
+        .job-tag { position: absolute; bottom: 0; left: 0; background: #111; color: #fff; padding: 5px 15px; font-size: 10px; font-weight: 700; text-transform: uppercase; }
         
-        .sub-form { display: flex; flex-direction: column; gap: 10px; }
-        .sub-input { background: #fff; border: none; padding: 15px; font-size: 11px; font-weight: 700; letter-spacing: 1px; outline: none; }
-        .sub-btn { background: transparent; border: 1px solid rgba(255,255,255,0.2); color: #fff; padding: 12px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; transition: 0.3s; }
-        .sub-btn:hover { background: #fff; color: #111; }
+        .job-details { padding: 30px; flex-grow: 1; display: flex; flex-direction: column; }
+        .job-title { font-size: 18px; margin-bottom: 20px; }
+        .job-list { list-style: none; padding: 0; margin: 0 0 30px; flex-grow: 1; }
+        .job-list li { padding-left: 15px; position: relative; margin-bottom: 8px; font-size: 13px; color: #666; font-weight: 500; }
+        .job-list li::before { content: '•'; color: #ffb600; position: absolute; left: 0; font-size: 20px; line-height: 1; top: -2px; }
+        
+        .job-meta { border-top: 1px solid #f0f0f0; padding-top: 20px; display: flex; justify-content: space-between; align-items: center; }
+        .salary { font-size: 18px; font-weight: 800; color: #111; }
+        .salary span { display: block; font-size: 10px; color: #999; font-weight: 600; text-transform: uppercase; margin-bottom: 2px; }
+        .btn-sm { padding: 10px 25px; font-size: 10px; background: #111; color: #fff; border: none; }
+        .btn-sm:hover { background: #ffb600; color: #111; }
 
-        @media (max-width: 1024px) {
-            .jobs-grid, .stats-grid, .footer-grid { grid-template-columns: 1fr 1fr; }
-            .hero h1 { font-size: 50px; }
-        }
+        /* STATS (From HTML) */
+        .stats-row { background: #f9f9f9; padding: 80px 0; border-top: 1px solid #eee; }
+        .counter-box { text-align: center; padding: 0 20px; }
+        .counter-icon i { font-size: 40px; color: #ffb600; margin-bottom: 20px; display: block; }
+        .counter-num { font-size: 50px; font-weight: 900; color: #111; line-height: 1; margin-bottom: 10px; }
+        .counter-text { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #999; }
+
+        /* FOOTER (From HTML) */
+        footer { background: #111; color: #999; padding: 80px 0 0; }
+        .footer-widget h4 { color: #fff; font-size: 12px; letter-spacing: 1px; margin-bottom: 30px; }
+        .footer-logo { margin-bottom: 20px; filter: brightness(0) invert(1); opacity: 0.5; height: 40px; }
+        .contact-list li { margin-bottom: 15px; display: flex; gap: 10px; font-size: 13px; }
+        .contact-list i { color: #ffb600; margin-top: 4px; }
+        .copyright { background: #0a0a0a; padding: 30px 0; margin-top: 60px; border-top: 1px solid rgba(255,255,255,0.05); font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* Responsiveness */
         @media (max-width: 768px) {
-            .jobs-grid, .stats-grid, .footer-grid { grid-template-columns: 1fr; }
-            .top-bar, .main-menu { display: none; }
-            .header-flex { justify-content: center; }
-            .hero { height: auto; padding: 100px 0; }
+            .vc_col-sm-3, .vc_col-sm-4, .vc_col-sm-8, .vc_col-sm-9 { width: 100%; margin-bottom: 30px; }
+            .hero-title-lg { font-size: 40px; }
+            .top-bar { display: none; }
+            .main-menu { display: none; } /* Simplified for static demo */
         }
     </style>
 </head>
 <body>
 
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <div class="container top-bar-flex">
-            <div class="top-info">
-                <a href="#"><i class="fa fa-phone"></i> +48 795 888 002</a>
-                <a href="#"><i class="fa fa-envelope"></i> biuro@axilon-praca.pl</a>
+<!-- TOP BAR -->
+<div class="top-bar">
+    <div class="container">
+        <div class="vc_row" style="align-items: center; justify-content: space-between;">
+            <div class="top-contacts">
+                <ul>
+                    <li><i class="fa fa-phone"></i> +48 793 698 862</li>
+                    <li><i class="fa fa-envelope"></i> biuro@axilon-praca.pl</li>
+                </ul>
             </div>
-            <div class="top-hours">PON - PT 8:00 - 16:00</div>
+            <div class="top-hours">Pn - Pt 8.00 - 18.00</div>
         </div>
     </div>
+</div>
 
-    <!-- Header -->
-    <header>
-        <div class="container header-flex">
-            <a href="#" class="logo">
-                <img src="https://axilon-praca.pl/wp-content/uploads/2017/08/logo-mobile.png" alt="Axilon">
-            </a>
+<!-- HEADER -->
+<header class="main-header">
+    <div class="container">
+        <div class="vc_row" style="align-items: center; width: 100%;">
+            <div class="logo-wrapper">
+                <a href="#"><img src="https://axilon-praca.pl/wp-content/uploads/2017/08/logo-mobile.png" alt="Axilon"></a>
+            </div>
             <nav class="main-menu">
-                <a href="#" style="color: #ffb600;">Start</a>
+                <a href="#" style="color:#ffb600">Start</a>
                 <a href="#">O Nas</a>
-                <a href="#">Praca</a>
+                <a href="#">Ogłoszenia o pracę</a>
                 <a href="#">Kontakt</a>
-                <a href="#" class="btn-contact">APLIKUJ TERAZ</a>
+                <a href="#" class="btn" style="padding: 10px 25px; margin-left: 20px;">Aplikuj Teraz</a>
             </nav>
         </div>
-    </header>
+    </div>
+</header>
 
-    <!-- Hero -->
-    <section class="hero">
-        <div class="hero-overlay"></div>
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-year">ESTABLISHED 2013</div>
-                <h1>NAJWYŻSZE<br><span>STAWKI</span><br>W POLSCE</h1>
-                <p>Profesjonalna rekrutacja kadr dla branży budowlanej i technicznej. Gwarantujemy stabilność, legalność i najwyższą jakość obsługi.</p>
-                <div class="hero-btns">
-                    <a href="#" class="btn btn-primary">AKTUALNE OFERTY</a>
-                    <a href="#" class="btn btn-outline">SKONTAKTUJ SIĘ</a>
+<!-- HERO -->
+<div class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="container">
+        <div class="vc_row">
+            <div class="vc_col-sm-9 hero-content">
+                <div style="color: #666; font-size: 11px; letter-spacing: 3px; font-weight: 700; margin-bottom: 20px; border-left: 3px solid #ffb600; padding-left: 15px;">ESTABLISHED 2013</div>
+                <h1 class="hero-title-lg">NAJWYŻSZE<br><span>STAWKI</span><br>W POLSCE</h1>
+                <p class="hero-subtitle">Profesjonalna rekrutacja kadr dla branży budowlanej i technicznej. Gwarantujemy stabilność, legalność i najwyższą jakość obsługi.</p>
+                <div>
+                    <a href="#" class="btn">Aktualne Oferty</a>
+                    <a href="#" class="btn btn-outline">Skontaktuj Się</a>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</div>
 
-    <!-- Content -->
-    <section style="padding: 100px 0;">
-        <div class="container">
-            <div class="section-title">
-                <span class="sub-title">AVAILABLE POSITIONS</span>
-                <h2 class="main-title">OFERTY <span>PRACY</span></h2>
-            </div>
+<!-- JOBS CONTENT -->
+<div class="section-padding">
+    <div class="container">
+        <div class="heading-block">
+            <span>AVAILABLE POSITIONS</span>
+            <h2>OFERTY PRACY</h2>
+        </div>
 
-            <div class="jobs-grid">
-                <!-- Job 1 -->
-                <div class="job-card">
-                    <div class="job-img">
-                        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=80" alt="Budowa">
-                        <div class="job-loc">WARSZAWA, ŁÓDŹ</div>
+        <div class="vc_row">
+            <!-- Job 1 -->
+            <div class="vc_col-sm-4">
+                <div class="job-item">
+                    <div class="job-thumb">
+                        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=80" alt="Construction">
+                        <div class="job-tag">Warszawa, Łódź</div>
                     </div>
-                    <div class="job-body">
+                    <div class="job-details">
                         <h3 class="job-title">PRACOWNICY BUDOWLANI</h3>
                         <ul class="job-list">
                             <li>Elektryków / Электриков</li>
@@ -176,23 +172,22 @@
                             <li>Tynkarzy / Штукатуров</li>
                             <li>Malarzy / Маляров</li>
                         </ul>
-                        <div class="job-footer">
-                            <div>
-                                <span class="salary-label">PŁACA NETTO</span>
-                                <span class="salary-val">Wysokie stawki</span>
-                            </div>
-                            <a href="#" class="btn-apply">APLIKUJ</a>
+                        <div class="job-meta">
+                            <div class="salary"><span>Płaca Netto</span>Wysokie stawki</div>
+                            <a href="#" class="btn btn-sm">Aplikuj</a>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Job 2 -->
-                <div class="job-card">
-                    <div class="job-img">
-                        <img src="https://images.unsplash.com/photo-1584622050111-993a426fbf0a?w=600&q=80" alt="Komunal">
-                        <div class="job-loc">WARSZAWA</div>
+            </div>
+
+            <!-- Job 2 -->
+            <div class="vc_col-sm-4">
+                <div class="job-item">
+                    <div class="job-thumb">
+                        <img src="https://images.unsplash.com/photo-1584622050111-993a426fbf0a?w=600&q=80" alt="Communal">
+                        <div class="job-tag">Warszawa</div>
                     </div>
-                    <div class="job-body">
+                    <div class="job-details">
                         <h3 class="job-title">PRACOWNIK KOMUNALNY</h3>
                         <ul class="job-list">
                             <li>Wiek do 55 lat</li>
@@ -200,23 +195,22 @@
                             <li>Zapewnione zakwaterowanie</li>
                             <li>Pn-Pt 6:00 - 18:00</li>
                         </ul>
-                        <div class="job-footer">
-                            <div>
-                                <span class="salary-label">PŁACA NETTO</span>
-                                <span class="salary-val">7000 PLN</span>
-                            </div>
-                            <a href="#" class="btn-apply">APLIKUJ</a>
+                        <div class="job-meta">
+                            <div class="salary"><span>Płaca Netto</span>7000 PLN</div>
+                            <a href="#" class="btn btn-sm">Aplikuj</a>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Job 3 -->
-                <div class="job-card">
-                    <div class="job-img">
+            <!-- Job 3 -->
+            <div class="vc_col-sm-4">
+                <div class="job-item">
+                    <div class="job-thumb">
                         <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=600&q=80" alt="Operator">
-                        <div class="job-loc">GDAŃSK</div>
+                        <div class="job-tag">Gdańsk</div>
                     </div>
-                    <div class="job-body">
+                    <div class="job-details">
                         <h3 class="job-title">OPERATORZY UDT</h3>
                         <ul class="job-list">
                             <li>Stawka od 6900 netto</li>
@@ -224,96 +218,78 @@
                             <li>Możliwość nadgodzin</li>
                             <li>Praca w systemie zmianowym</li>
                         </ul>
-                        <div class="job-footer">
-                            <div>
-                                <span class="salary-label">PŁACA NETTO</span>
-                                <span class="salary-val">6900 PLN</span>
-                            </div>
-                            <a href="#" class="btn-apply">APLIKUJ</a>
+                        <div class="job-meta">
+                            <div class="salary"><span>Płaca Netto</span>6900 PLN</div>
+                            <a href="#" class="btn btn-sm">Aplikuj</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</div>
 
-    <!-- Stats -->
-    <section class="stats">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-icon">
-                        <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
-                    </div>
-                    <div class="stat-num">8200</div>
-                    <div class="stat-desc">ZATRUDNIONYCH PRACOWNIKÓW</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-icon">
-                         <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                    </div>
-                    <div class="stat-num">270</div>
-                    <div class="stat-desc">ZADOWOLONYCH KLIENTÓW</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-icon">
-                        <svg viewBox="0 0 24 24"><path d="M15 11V5l-3-3-3 3v2H3v14h18V11h-6zm-8 8H5v-2h2v2zm0-4H5v-2h2v2zm0-4H5V9h2v2zm6 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V9h2v2zm0-4h-2V5h2v2zm6 12h-2v-2h2v2zm0-4h-2v-2h2v2z"/></svg>
-                    </div>
-                    <div class="stat-num">73+</div>
-                    <div class="stat-desc">MIAST W POLSCE</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-icon">
-                         <svg viewBox="0 0 24 24"><path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg>
-                    </div>
-                    <div class="stat-num">11+</div>
-                    <div class="stat-desc">LAT DOŚWIADCZENIA</div>
-                </div>
+<!-- STATS -->
+<div class="stats-row">
+    <div class="container">
+        <div class="vc_row">
+            <div class="vc_col-sm-3 counter-box">
+                <div class="counter-icon"><i class="fa fa-users"></i></div>
+                <div class="counter-num">8200</div>
+                <div class="counter-text">Zatrudnionych pracowników</div>
+            </div>
+            <div class="vc_col-sm-3 counter-box">
+                <div class="counter-icon"><i class="fa fa-handshake-o"></i></div>
+                <div class="counter-num">270</div>
+                <div class="counter-text">Zadowolonych klientów</div>
+            </div>
+            <div class="vc_col-sm-3 counter-box">
+                <div class="counter-icon"><i class="fa fa-building-o"></i></div>
+                <div class="counter-num">73+</div>
+                <div class="counter-text">Miast w Polsce</div>
+            </div>
+            <div class="vc_col-sm-3 counter-box">
+                <div class="counter-icon"><i class="fa fa-calendar"></i></div>
+                <div class="counter-num">11+</div>
+                <div class="counter-text">Lat doświadczenia</div>
             </div>
         </div>
-    </section>
+    </div>
+</div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <div class="f-title" style="font-size: 16px;">AXILONGROUP</div>
-                    <p class="f-text">Zaufany partner w rekrutacji specjalistycznej. Budujemy relacje oparte na profesjonalizmie i transparentności.</p>
-                </div>
-                <div>
-                    <div class="f-title">CONTACT INFO</div>
-                    <ul class="f-list">
-                        <li><i class="fa fa-map-marker"></i> Aleja T. Kościuszki 71, Łódź</li>
-                        <li><i class="fa fa-phone"></i> +48 795 888 002</li>
-                        <li><i class="fa fa-envelope"></i> biuro@axilon-praca.pl</li>
-                    </ul>
-                </div>
-                <div class="f-links">
-                    <div class="f-title">NAVIGATION</div>
-                    <a href="#">START</a>
-                    <a href="#">ABOUT</a>
-                    <a href="#">PRACA</a>
-                    <a href="#">CONTACT</a>
-                </div>
-                <div>
-                    <div class="f-title">NEWSLETTER</div>
-                    <div class="sub-form">
-                        <input type="email" placeholder="YOUR EMAIL" class="sub-input">
-                        <button class="sub-btn">JOIN NOW</button>
-                    </div>
-                </div>
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="vc_row">
+            <div class="vc_col-sm-4 footer-widget">
+                <img src="https://axilon-praca.pl/wp-content/uploads/2017/08/logo-mobile.png" class="footer-logo" alt="Axilon Footer">
+                <p style="font-size: 13px; line-height: 2;">Zaufany partner w rekrutacji specjalistycznej. Budujemy relacje oparte na profesjonalizmie i transparentności.</p>
             </div>
-            <div style="border-top: 1px solid #222; padding-top: 30px; display: flex; justify-content: space-between; font-size: 10px; color: #555; text-transform: uppercase; letter-spacing: 1px;">
-                <div>© 2024 AXILON GROUP LTD.</div>
-                <div style="display: flex; gap: 20px;">
-                    <span>PRIVACY</span>
-                    <span>TERMS</span>
-                    <span>LEGAL</span>
-                </div>
+            <div class="vc_col-sm-4 footer-widget">
+                <h4>CONTACT INFO</h4>
+                <ul class="contact-list" style="list-style:none; padding:0;">
+                    <li><i class="fa fa-map-marker"></i> Aleja T. Kościuszki 71, 90-436 Łódź</li>
+                    <li><i class="fa fa-phone"></i> +48 793 698 862</li>
+                    <li><i class="fa fa-envelope"></i> biuro@axilon-praca.pl</li>
+                </ul>
+            </div>
+            <div class="vc_col-sm-4 footer-widget">
+                <h4>NEWSLETTER</h4>
+                <p style="font-size: 12px; margin-bottom: 15px;">Zapisz się, aby otrzymywać nowości.</p>
+                <input type="email" placeholder="Email Address" style="background:#222; border:none; padding:12px; width:65%; color:#fff;">
+                <button style="background:#ffb600; border:none; padding:12px; width:30%; font-weight:700;">OK</button>
             </div>
         </div>
-    </footer>
+    </div>
+    <div class="copyright">
+        <div class="container">
+            <div class="vc_row">
+                <div class="vc_col-sm-6">© 2024 AXILON GROUP LTD.</div>
+                <div class="vc_col-sm-6" style="text-align: right;">PRIVACY POLICY | TERMS</div>
+            </div>
+        </div>
+    </div>
+</footer>
 
 </body>
 </html>
