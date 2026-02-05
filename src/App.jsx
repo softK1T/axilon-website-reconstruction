@@ -10,7 +10,7 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="min-h-screen bg-white text-gray-900 font-light">
+    <div className="min-h-screen bg-white text-gray-900">
       <Header />
       <Hero />
       <Services />

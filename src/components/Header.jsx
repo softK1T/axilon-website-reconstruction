@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Phone } from 'lucide-react';
+import { Menu, X, Phone, Mail } from 'lucide-react';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -21,102 +21,97 @@ const Header = () => {
   ];
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
-          ? 'bg-white shadow-sm py-4'
-          : 'bg-transparent py-6'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <a href="#home" className="relative z-10">
-            <span className={`font-serif text-2xl tracking-wider transition-colors duration-300 ${
-              isScrolled ? 'text-gray-900' : 'text-white'
-            }`}>
-              AXILON
-            </span>
-            <span className={`block text-[10px] tracking-[0.3em] uppercase transition-colors duration-300 ${
-              isScrolled ? 'text-[#c9a962]' : 'text-[#c9a962]'
-            }`}>
-              Agencja Pracy
-            </span>
-          </a>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-10">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className={`text-[13px] tracking-wider uppercase transition-all duration-300 hover:text-[#c9a962] ${
-                  isScrolled ? 'text-gray-700' : 'text-white/90'
-                }`}
-              >
-                {link.name}
-              </a>
-            ))}
-          </nav>
-
-          {/* Phone & CTA */}
-          <div className="hidden lg:flex items-center gap-6">
-            <a
-              href="tel:+48793698862"
-              className={`flex items-center gap-2 text-[13px] tracking-wide transition-colors duration-300 ${
-                isScrolled ? 'text-gray-700' : 'text-white/90'
-              }`}
-            >
-              <Phone size={16} className="text-[#c9a962]" />
-              +48 793 698 862
+    <>
+      {/* Top Bar */}
+      <div className="bg-[#32373c] text-white py-2 text-sm">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 flex justify-between items-center">
+          <div className="flex gap-6 items-center">
+            <a href="tel:+48793698862" className="flex items-center gap-2 hover:text-[#4FBDC6] transition">
+              <Phone size={14} />
+              <span>+48 793 698 862</span>
             </a>
+            <a href="mailto:biuro@axilon-praca.pl" className="flex items-center gap-2 hover:text-[#4FBDC6] transition">
+              <Mail size={14} />
+              <span>biuro@axilon-praca.pl</span>
+            </a>
+          </div>
+          <div className="hidden md:block text-white/70 text-xs">
+            Pn - Pt 8:00 - 18:00
+          </div>
+        </div>
+      </div>
+
+      {/* Main Header */}
+      <header
+        className={`sticky top-0 z-50 transition-all duration-300 ${
+          isScrolled ? 'bg-white shadow-md' : 'bg-white'
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="flex items-center justify-between h-20">
+            {/* Logo */}
+            <a href="#home" className="flex items-center gap-3">
+              <div className="text-[#4FBDC6] text-3xl font-bold tracking-tight">
+                AXILON
+              </div>
+            </a>
+
+            {/* Desktop Navigation */}
+            <nav className="hidden lg:flex items-center gap-8">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="text-sm font-medium text-[#32373c] hover:text-[#066aab] transition uppercase tracking-wide"
+                >
+                  {link.name}
+                </a>
+              ))}
+            </nav>
+
+            {/* CTA Button */}
             <a
               href="#contact"
-              className="bg-[#c9a962] text-white px-6 py-3 text-[12px] tracking-wider uppercase hover:bg-[#b8944d] transition-all duration-300"
+              className="hidden lg:block bg-[#4FBDC6] text-white px-6 py-3 rounded-full text-sm font-semibold uppercase tracking-wide hover:bg-[#066aab] transition"
             >
               Kontakt
             </a>
-          </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`lg:hidden z-10 transition-colors duration-300 ${
-              isScrolled || isMobileMenuOpen ? 'text-gray-900' : 'text-white'
-            }`}
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Menu */}
-      <div
-        className={`fixed inset-0 bg-white z-40 lg:hidden transition-transform duration-500 ${
-          isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}
-      >
-        <div className="flex flex-col items-center justify-center h-full gap-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="text-2xl font-light tracking-wider text-gray-900 hover:text-[#c9a962] transition-colors"
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="lg:hidden text-[#32373c]"
             >
-              {link.name}
-            </a>
-          ))}
-          <a
-            href="tel:+48793698862"
-            className="mt-8 flex items-center gap-2 text-[#c9a962]"
-          >
-            <Phone size={20} />
-            +48 793 698 862
-          </a>
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
-      </div>
-    </header>
+
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="lg:hidden bg-white border-t border-gray-100">
+            <div className="px-6 py-4 space-y-4">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block text-[#32373c] hover:text-[#066aab] transition uppercase text-sm font-medium"
+                >
+                  {link.name}
+                </a>
+              ))}
+              <a
+                href="#contact"
+                className="block bg-[#4FBDC6] text-white px-6 py-3 rounded-full text-center text-sm font-semibold uppercase"
+              >
+                Kontakt
+              </a>
+            </div>
+          </div>
+        )}
+      </header>
+    </>
   );
 };
 

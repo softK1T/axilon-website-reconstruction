@@ -3,62 +3,45 @@ import { ChevronDown } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative h-[600px] md:h-[700px] flex items-center overflow-hidden bg-[#32373c]">
       {/* Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')`,
+          backgroundImage: 'url(https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80)',
         }}
       >
         <div className="absolute inset-0 bg-black/50"></div>
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-6">
-        <div className="overflow-hidden mb-6">
-          <p className="text-[#c9a962] text-[13px] tracking-[0.4em] uppercase animate-fade-in-up">
-            Agencja Pracy Tymczasowej
-          </p>
-        </div>
-
-        <div className="overflow-hidden mb-8">
-          <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-light leading-tight animate-fade-in-up animation-delay-200">
-            Twoja kariera
-            <br />
-            <span className="italic">zaczyna się tutaj</span>
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">
+        <div className="max-w-2xl">
+          <div className="text-[#4FBDC6] text-6xl md:text-8xl font-black uppercase leading-none mb-4">
+            AXILON
+          </div>
+          <h1 className="text-white text-3xl md:text-5xl font-bold uppercase leading-tight mb-6">
+            Dobrze płatna praca<br />
+            <span className="text-[#4FBDC6]">w Polsce</span>
           </h1>
-        </div>
-
-        <div className="overflow-hidden mb-12">
-          <p className="text-white/80 text-lg md:text-xl font-light max-w-2xl mx-auto leading-relaxed animate-fade-in-up animation-delay-400">
-            Profesjonalne pośrednictwo pracy w Polsce. 
-            Łączymy pracodawców z wykwalifikowanymi pracownikami od ponad 11 lat.
+          <p className="text-white/90 text-base md:text-lg leading-relaxed mb-8 max-w-xl">
+            Strona internetowa stworzona dla ludzi, którzy chcą znaleźć dobrą legalną pracę w Polsce.<br />
+            U nas znajdziesz aktualne oferty pracy
           </p>
-        </div>
-
-        <div className="overflow-hidden animate-fade-in-up animation-delay-600">
           <a
-            href="#jobs"
-            className="inline-block border border-white/30 text-white px-10 py-4 text-[13px] tracking-wider uppercase hover:bg-white hover:text-gray-900 transition-all duration-500"
+            href="#contact"
+            className="inline-block bg-[#4FBDC6] text-white px-10 py-4 rounded-full text-sm font-semibold uppercase tracking-wide hover:bg-white hover:text-[#32373c] transition"
           >
-            Zobacz oferty pracy
+            Kontakt +48 793 698 862
           </a>
         </div>
       </div>
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-        <a href="#services" className="text-white/60 hover:text-white transition-colors">
+        <a href="#services" className="text-white/60 hover:text-white transition">
           <ChevronDown size={32} />
         </a>
-      </div>
-
-      {/* Side Text */}
-      <div className="hidden lg:block absolute left-6 top-1/2 -translate-y-1/2 -rotate-90 origin-left">
-        <span className="text-white/40 text-[11px] tracking-[0.4em] uppercase">
-          Axilon Group — Łódź, Polska
-        </span>
       </div>
     </section>
   );
