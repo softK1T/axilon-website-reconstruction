@@ -7,13 +7,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#1a1a1a',
-        accent: '#c9a962',
-        light: '#f8f8f8',
-      },
-      fontFamily: {
-        serif: ['Playfair Display', 'serif'],
-        sans: ['Montserrat', 'sans-serif'],
+        primary: '#066aab',
+        teal: '#4FBDC6',
+        dark: '#32373c',
+        gold: '#c9a962',
       },
     },
   },
